@@ -14,8 +14,29 @@
 
 PROJECTS := tools/tomd
 
+.PHONY: all build clean format dirty licenser $(PROJECTS)
+
 dirty:
 	git diff --exit-code
 
 licenser:
 	nix develop --command licenser apply -r "Notedown Authors"
+
+format:
+	@echo "Formatting all projects"
+	@for projects in $(PROJECTS); do \
+		$(MAKE) -C $$projects format; \
+	done
+
+clean:
+	@echo "Cleaning all projects"
+	@for projects in $(PROJECTS); do \
+		$(MAKE) -C $$projects clean; \
+	done
+
+build:
+	@echo "Building all projects"
+	@for projects in $(PROJECTS); do \
+		$(MAKE) -C $$projects build; \
+	done
+

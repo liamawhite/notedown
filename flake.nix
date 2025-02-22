@@ -18,6 +18,7 @@
               go
               python3
               poetry
+              black
               licenser.packages.${system}.default
             ];
           };

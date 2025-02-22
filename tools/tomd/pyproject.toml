@@ -2,7 +2,6 @@
 name = "tomd"
 version = "0.1.0"
 description = ""
-readme = "README.md"
 authors = []
 requires-python = ">=3.12,<3.14"
 
