@@ -1,0 +1,36 @@
+[project]
+name = "tomd"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+authors = []
+requires-python = ">=3.12,<3.14"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "6.11.1"
+
+[tool.poetry.dependencies]
+click = "8.1.8"
+yt-dlp = "2025.1.26"
+wtpsplit = "2.1.4"
+langchain-community = "0.3.18"
+torch = "2.6.0"
+pydub = "0.25.1"
+librosa = "0.10.2.post1"
+numba = "0.61.0"
+persistentkv = {path = "../../modules/persistentkv"}
+mdformat = "0.7.22"
+markdownify = "0.14.1"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.poetry.scripts]
+tomd = "tomd.main:extract"
+bundle = "bundle:bundle"
+

@@ -19,3 +19,9 @@ vendor/
 
 # Go workspace file
 go.work
+
+# Python
+.venv
+__pycache__
+build/
+dist/

@@ -12,21 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-all: format mod test dirty
-
-hygiene: format mod
+PROJECTS := tools/tomd
 
 dirty:
 	git diff --exit-code
 
-mod:
-	go mod tidy
-
-format: licenser
-	gofmt -w .
-
-test:
-	go test ./...
-
 licenser:
-	licenser apply -r "Notedown Authors"
+	nix develop --command licenser apply -r "Notedown Authors"
